@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+
+		"importsNotUsedAsValues": "error",
+		"types": [
+			"svelte",
+			"@types/firefox-webext-browser"
+		],
+		"strict": true,
+	}
+}

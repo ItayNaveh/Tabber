@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Tabber",
+	"version": "0.0.1",
+
+	"permissions": [
+		"tabs"
+	],
+
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "<all_urls>" ],
+			"js": [ "content.js" ]
+		}
+	],
+
+	"browser_action": {
+		"default_title": "Tabber",
+		"default_popup": "popup/popup.html"
+	}
+}

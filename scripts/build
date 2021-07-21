@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+mkdir -p build/popup/
+
+rollup="node_modules/.bin/rollup"
+
+$rollup -c
+
+
+cp src/manifest.json build/
+
+cp src/popup/popup.html build/popup/
+
+cp -r src/icons/ build/

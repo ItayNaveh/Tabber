@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+mkdir -p build/popup/
+
+concurrently="node_modules\.bin\concurrently"
+rollup="node_modules\.bin\rollup"
+web_ext="node_modules\.bin\web-ext"
+
+cp src/manifest.json build/
+cp src/popup/popup.html build/popup/popup.html
+cp -r src/icons/ build/
+
+echo "Running concurrently"
+$concurrently \
+	"$rollup -c -w" \
+	"$web_ext run --source-dir build --firefox \"C:/Program Files/Firefox/stable_88_0_1/firefox.exe\""
+	# "$web_ext run --source-dir build/ --firefox /c/Program\ Files/Firefox/stable_88_0_1/firefox.exe"
